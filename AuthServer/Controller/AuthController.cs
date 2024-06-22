@@ -1,10 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AuthServer.Core;
-using AuthServer.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AuthServer.Controllers
 {
@@ -12,38 +8,35 @@ namespace AuthServer.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IAuthService _authService;
 
-        public AuthController(IUserService userService)
+        public AuthController(IAuthService authService)
         {
-            _userService = userService;
-        }
-
-        [HttpPost("register")]
-        public async Task<IActionResult> RegisterUser([FromBody] UserRegistrationModel Models)
-        {
-            await _userService.RegisterUserAsync(Models.Username, Models.Password);
-            return Ok("User registered successfully");
+            _authService = authService;
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginModel Models)
+        public async Task<IActionResult> Login([FromBody] LoginRequest model)
         {
-            var user = await _userService.AuthenticateUserAsync(Models.Username, Models.Password);
-            if (user == null)
-                return BadRequest("Invalid username or password");
-            else
-                return Ok("Login successful");
-        }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid request data.");
+            }
 
-        [HttpPost("changepassword")]
-        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel Models)
-        {
-            var success = await _userService.ChangePasswordAsync(Models.Username, Models.NewPassword);
-            if (success)
-                return Ok("Password changed successfully");
-            else
-                return BadRequest("Failed to change password");
+            var isValid = await _authService.ValidateCredentialsAsync(model.Username, model.Password);
+            if (!isValid)
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            var token = await _authService.GenerateJwtTokenAsync(model.Username);
+            return Ok(new { Token = token });
         }
+    }
+
+    public class LoginRequest
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

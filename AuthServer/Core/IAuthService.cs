@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace AuthServer.Core
 {
     public interface IAuthService
     {
-        Task<string> GenerateJwtTokenAsync(User user);
-        Task<bool> ValidateJwtTokenAsync(string token);
-
+        Task<string> GenerateJwtTokenAsync(string username);
+        Task<bool> ValidateCredentialsAsync(string username, string password);
     }
 }

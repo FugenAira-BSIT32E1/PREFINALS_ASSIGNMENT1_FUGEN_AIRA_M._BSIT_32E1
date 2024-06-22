@@ -32,3 +32,11 @@ C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\Aut
 C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\obj\Debug\net8.0\AuthServer.pdb
 C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\obj\Debug\net8.0\AuthServer.genruntimeconfig.cache
 C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\obj\Debug\net8.0\ref\AuthServer.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\USER\Documents\GitHub\PREFINALS_ASSIGNMENT1_FUGEN_AIRA_M._BSIT_32E1\AuthServer\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
